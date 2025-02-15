@@ -16,6 +16,11 @@ namespace SocialMediaAPI.DataAccess.DbConfigurations
 
             builder.HasIndex(x => x.Name)
                 .IsUnique();
+
+            builder.HasData(
+                new Role { Id = 1, Name = "Administrator" },
+                new Role { Id = 2, Name = "User" }
+                );
         }
     }
 }

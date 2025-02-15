@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SocialMediaAPI.Core\SocialMediaAPI.Common.csproj" />
+    <ProjectReference Include="..\SocialMediaAPI.Common\SocialMediaAPI.Common.csproj" />
   </ItemGroup>
 
 </Project>
