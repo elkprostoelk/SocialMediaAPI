@@ -9,6 +9,8 @@ namespace SocialMediaAPI.Application.AutoMapperProfiles
         public AutoMapperProfile()
         {
             CreateMap<RegisterDto, User>();
+
+            CreateMap<Country, CountryDto>();
         }
     }
 }

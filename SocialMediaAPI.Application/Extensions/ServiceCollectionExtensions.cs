@@ -21,12 +21,15 @@ namespace SocialMediaAPI.Application.Extensions
 
             services.AddAutoMapper(assemblies);
             services.AddValidatorsFromAssemblies(assemblies);
+            services.AddMemoryCache();
 
             services.AddScoped<IRepository<User, Guid>, Repository<User, Guid>>();
             services.AddScoped<IRepository<Role, int>, Repository<Role, int>>();
+            services.AddScoped<IRepository<Country, long>, Repository<Country, long>>();
 
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IPasswordHasherService, PasswordHasherService>();
+            services.AddScoped<ICountryService, CountryService>();
         }
 
         public static void ConfigureJwtAuth(this IServiceCollection services, IConfiguration configuration)
