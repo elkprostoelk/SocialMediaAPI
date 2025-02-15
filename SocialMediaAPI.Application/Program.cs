@@ -36,9 +36,6 @@ app.UseHttpsRedirection();
 
 app.UseExceptionHandler(x => x.Run(async context =>
 {
-    var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
-    var exception = exceptionHandlerPathFeature!.Error;
-    Log.Error(exception, "An exception occured while processing the request");
     context.Response.StatusCode = StatusCodes.Status500InternalServerError;
     await context.Response.WriteAsJsonAsync(new { error = "Unexpected error happened. Please try again later or contact the Production Support team." });
 }));
